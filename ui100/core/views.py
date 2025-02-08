@@ -5,4 +5,8 @@ class HomeView(TemplateView):
 
 
 class PatmentView(TemplateView):
-    template_name = "core/payment.html"
+    template_name = "core/home.html"
+
+
+class HeroView(TemplateView):
+    template_name = "core/hero.html"
