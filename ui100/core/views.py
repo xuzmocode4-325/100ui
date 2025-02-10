@@ -10,3 +10,8 @@ class PatmentView(TemplateView):
 
 class HeroView(TemplateView):
     template_name = "core/hero.html"
+
+
+class CalculatorView(TemplateView):
+    template_name = "core/calculator.html"
+

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+   
+    .button-operator {
+        background-color: #f0f0f0;
+    }
+</style>
+{% endblock %}
+
+
+{% block style_overide %}bg-gray-400{% endblock %}
+
+{% block content %}
+<div class="calculator border rounded-lg w-[340px] p-5 m-auto font-sans bg-gray-50 shadow-lg shadow-gray-500">    
+    <div id="display" class="border h-20 p-5 rounded-md mb-10 bg-gray-100 text-right"></div>
+    <div class="grid grid-cols-4 gap-3 transition-colors decoration-blue-300">
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('7')">7</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('8')">8</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('9')">9</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-400 bg-gray-200" onclick="setOperation('/')">/</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('4')">4</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('5')">5</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('6')">6</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-400 bg-gray-200" onclick="setOperation('*')">*</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('1')">1</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('2')">2</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('3')">3</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-400 bg-gray-200" onclick="setOperation('-')">-</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="appendNumber('0')">0</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-100" onclick="clearDisplay()">C</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-700 text-white bg-[#7b1e48]" onclick="calculateResult()">=</button>
+        <button class="w-16 h-16 text-xl rounded-md border hover:bg-slate-400 bg-gray-200" onclick="setOperation('+')">+</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let display = document.getElementById('display');
+    let currentInput = '';
+    let previousInput = '';
+    let operation = null;
+
+    function appendNumber(number) {
+        currentInput += number;
+        updateDisplay();
+    }
+
+    function setOperation(op) {
+        if (currentInput === '') return;
+        if (previousInput !== '') {
+            calculateResult();
+        }
+        operation = op;
+        previousInput = currentInput;
+        currentInput = '';
+    }
+
+    function calculateResult() {
+        let result;
+        const prev = parseFloat(previousInput);
+        const curr = parseFloat(currentInput);
+        if (isNaN(prev) || isNaN(curr)) return;
+        switch (operation) {
+            case '+':
+                result = prev + curr;
+                break;
+            case '-':
+                result = prev - curr;
+                break;
+            case '*':
+                result = prev * curr;
+                break;
+            case '/':
+                result = prev / curr;
+                break;
+            default:
+                return;
+        }
+        currentInput = result;
+        updateDisplay();
+        operation = null;
+        previousInput = '';
+    }
+
+    function clearDisplay() {
+        currentInput = '';
+        previousInput = '';
+        operation = null;
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        display.innerText = currentInput;
+    }
+</script>
+{% endblock %}

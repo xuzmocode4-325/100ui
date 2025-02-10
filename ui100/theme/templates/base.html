@@ -7,14 +7,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		{% tailwind_css %}
+		{% block head %}
+		{% endblock %}
 	</head>
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal {% block style_overide %}{% endblock %}">
 		<div class="container mx-auto">
 			<section class="flex items-center justify-center h-screen">
 				{% block content %}
 				{% endblock  %} 
 			</section>
 		</div>
+	{% block scripts %}
+	{% endblock %}
 	</body>
 </html>
