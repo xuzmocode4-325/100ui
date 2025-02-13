@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style_overide %} bg-gray-500 {% endblock %}
+
 {% block content %}
 <div class="font-sans">
     <header class="absolute inset-x-0 top-0 z-50">
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
+          <a href="#" class="-m-2 p-1.5">
             <span class="sr-only">Your Company</span>
-            <div class="w-10 h-10 rounded-full flex justify-center items-center bg-[#7b1e48] mx-auto">
+            <!-- <div class="w-10 h-10 rounded-full flex justify-center items-center bg-[#7b1e48] mx-auto">
                 <p class="mx-auto text-white text-xs">Logo</p>
-            </div>
-            <!-- <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt=""> -->
+            </div> -->
+            <img class="mx-auto h-12 w-12" src="{% static 'core/img/icon.png' %}" alt="Your Company">
           </a>
         </div>
         <div class="flex lg:hidden">

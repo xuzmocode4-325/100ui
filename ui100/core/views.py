@@ -15,3 +15,11 @@ class HeroView(TemplateView):
 class CalculatorView(TemplateView):
     template_name = "core/calculator.html"
 
+
+class ProfileView(TemplateView):
+    template_name = "core/profile.html"
+
+
+class SettingsView(TemplateView):
+    template_name = "core/settings.html"
+
