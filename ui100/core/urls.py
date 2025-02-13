@@ -8,4 +8,5 @@ urlpatterns = [
     path('calculator', views.CalculatorView.as_view(), name='calculator'),
     path('profile', views.ProfileView.as_view(), name='profile'),
     path('settings', views.SettingsView.as_view(), name='settings'),
+    path('404', views.NotFoundView.as_view(), name='404'),
 ]

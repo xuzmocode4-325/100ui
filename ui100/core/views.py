@@ -23,3 +23,6 @@ class ProfileView(TemplateView):
 class SettingsView(TemplateView):
     template_name = "core/settings.html"
 
+class NotFoundView(TemplateView):
+    template_name = "core/404.html"
+
