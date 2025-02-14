@@ -9,4 +9,5 @@ urlpatterns = [
     path('profile', views.ProfileView.as_view(), name='profile'),
     path('settings', views.SettingsView.as_view(), name='settings'),
     path('404', views.NotFoundView.as_view(), name='404'),
+    path('music', views.MusicView.as_view(), name='music'),
 ]
