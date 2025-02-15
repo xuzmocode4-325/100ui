@@ -1999,6 +1999,10 @@ select {
     width: 100%;
   }
 
+  .sm\:w-96 {
+    width: 24rem;
+  }
+
   .sm\:max-w-3xl {
     max-width: 48rem;
   }
