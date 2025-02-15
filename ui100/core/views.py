@@ -1,5 +1,10 @@
 from django.views.generic import TemplateView
 
+streetwear_essentials = [
+    'caps', 'oversized tees', 'sweatpants', 'sweatshirt', 'hoodie',
+    'slides', 'socks', 'boxer shorts'
+]
+
 class HomeView(TemplateView):
     template_name = "core/home.html"
 
@@ -30,4 +35,8 @@ class NotFoundView(TemplateView):
 
 class MusicView(TemplateView):
     template_name = "core/music-ui.html"
+
+
+class SocialView(TemplateView):
+    template_name = "core/social-share.html"
 

@@ -10,4 +10,5 @@ urlpatterns = [
     path('settings', views.SettingsView.as_view(), name='settings'),
     path('404', views.NotFoundView.as_view(), name='404'),
     path('music', views.MusicView.as_view(), name='music'),
+    path('social', views.SocialView.as_view(), name='social'),
 ]
