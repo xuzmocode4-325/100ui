@@ -40,3 +40,10 @@ class MusicView(TemplateView):
 class SocialView(TemplateView):
     template_name = "core/social-share.html"
 
+
+class FlashView(TemplateView):
+    template_name = "core/flash-message.html"
+
+
+
+
