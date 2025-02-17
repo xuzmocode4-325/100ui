@@ -45,5 +45,9 @@ class FlashView(TemplateView):
     template_name = "core/flash-message.html"
 
 
+class CommerceView(TemplateView):
+    template_name = "core/commerce.html"
+
+
 
 

@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style_overide %}bg-gray-50{% endblock %}
+
+{% block content %}
+<div class="font-sans">
+    <header class="inset-x-0 top-0 z-50 bg-gray-50 fixed">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-2 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <!-- <div class="w-10 h-10 rounded-full flex justify-center items-center bg-[#7b1e48] mx-auto">
+                <p class="mx-auto text-white text-xs">Logo</p>
+            </div> -->
+            <img class="mx-auto h-12 w-12" src="{% static 'core/img/icon.png' %}" alt="Your Company">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Shop</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Blog</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Community</a>
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">About</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Product</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+              </div>
+              <div class="py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="relative">
+        <div class="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12 mt-24 lg:max-w-7xl lg:px-8 mb-12">
+          <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 max-h-screen py-24">
+            <a href="#" class="group">
+              <img src="{% static 'core/img/street-gear.png' %}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="aspect-1 bg-green-200 w-full rounded-lg object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Spring 2025</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Renegade In Retrograde</p>
+            </a>
+            <a href="#" class="group">
+              <img src="{% static 'core/img/pre-released.png' %}" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Autum 2026</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Overlays of Awesome</p>
+            </a>
+            <a href="#" class="group">
+              <img src="{% static 'core/img/placeholder.png' %}" alt="Person using a pen to cross a task off a productivity paper card." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Spring 2026</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Cyclops Saw This One Coming</p>
+            </a>
+            <a href="#" class="group">
+              <img src="{% static 'core/img/placeholder.png' %}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Autumn 2027</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Degenerative Constructionism</p>
+            </a>
+            <a href="#" class="group">
+              <img src="{% static 'core/img/placeholder.png' %}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Spring 2028</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">A Most Solemn Serendipity</p>
+            </a>
+            <a href="#" class="group">
+              <img src="{% static 'core/img/placeholder.png' %}" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Autumn 2029</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">The Vectors are on Steriods</p>
+            </a>
+            <a href="#" class="group">
+              <img src="{% static 'core/img/placeholder.png' %}" alt="Person using a pen to cross a task off a productivity paper card." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Spring 2030</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Equinox Exclusive</p>
+            </a>
+            <a href="#" class="group">
+              <img src="{% static 'core/img/placeholder.png' %}" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8">
+              <h3 class="mt-4 text-sm text-gray-700">Autum 2031</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">Machined Mechanical Memes</p>
+            </a>
+      
+            <!-- More products... -->
+          </div>
+        </div>
+    </div>
+</div>
+{%  endblock %}
+
+
+  
