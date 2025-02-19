@@ -13,4 +13,6 @@ urlpatterns = [
     path('social', views.SocialView.as_view(), name='social'),
     path('flash', views.FlashView.as_view(), name='flash'),
     path('commerce', views.CommerceView.as_view(), name='commerce'),
+    path('chat', views.ChatView.as_view(), name='chat'),
+    path('countdown', views.CountDownView.as_view(), name='countdown'),
 ]

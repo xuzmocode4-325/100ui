@@ -49,5 +49,16 @@ class CommerceView(TemplateView):
     template_name = "core/commerce.html"
 
 
+class ChatView(TemplateView):
+    template_name = "core/chat.html"
+
+
+class CountDownView(TemplateView):
+    template_name = "core/countdown.html"
+
+
+
+
+
 
 
